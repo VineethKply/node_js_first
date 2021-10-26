@@ -1,0 +1,14 @@
+{
+  "name": "first_node_js_with_express",
+  "version": "1.0.0",
+  "description": "first node project with express,json and put mtheod",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vineeth mohan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
