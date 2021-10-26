@@ -12,11 +12,11 @@ app.use(urlencodedParser)
 app.use(bodyParser.json())
 
 app.post('/', (request,response)=>{
-    console.log('server stated : http://localhost:3000/ post ')
+    response.send('server stated : http://localhost:3000/ post ')
 })
 
 app.get("/",(request,response)=>{
-    console.log('server stated : http://localhost:3000/ get ')
+    response.send('server stated : http://localhost:3000/ get ')
 })
 
 
