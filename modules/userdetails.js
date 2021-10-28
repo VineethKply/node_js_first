@@ -10,16 +10,14 @@ var userdetailsSchema = new mongoose.Schema({
         require : true,
     },
     email : {
-        type : email;
+        type : String,
         require : true
     },
-    pnone : {
+    phone : {
         type : Number,
-        maxlength : 11,
-        minlength : 10
     }
 });
 
 var userdetails_model=mongoose.model("users",userdetailsSchema)
-module.exports('user_model')
+module.exports = {userdetails_model} 
 

@@ -1,5 +1,8 @@
 var express=require('express')
 var bodyParser = require('body-parser')
+var mongoose = require('mongoose')
+var {userdetails_model}=require('./modules/userdetails')
+
 
 
 
@@ -12,7 +15,10 @@ app.use(urlencodedParser)
 app.use(bodyParser.json())
 
 app.post('/', (request,response)=>{
-    response.send('server stated : http://localhost:3000/ post ')
+
+    var usermodelobj = new userdetails_model(request.body);
+    response.send(usermodelobj)
+
 })
 
 app.get("/",(request,response)=>{
