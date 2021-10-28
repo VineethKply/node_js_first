@@ -15,10 +15,8 @@ app.use(urlencodedParser)
 app.use(bodyParser.json())
 
 app.post('/', (request,response)=>{
-
     var usermodelobj = new userdetails_model(request.body);
     response.send(usermodelobj)
-
 })
 
 app.get("/",(request,response)=>{
@@ -26,7 +24,7 @@ app.get("/",(request,response)=>{
 })
 
 
-app.listen(3000,()=>{
+app.listen( process.env.PORT ||  3000,()=>{
     console.log('server stated : http://localhost:3000/')
 
 })
