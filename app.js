@@ -5,7 +5,7 @@ var {userdetails_model}=require('./modules/userdetails')
 
 
 
-mongoose.connect('mongodb+srv://root:root@cluster0.bi1zi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://root:root@cluster0.bi1zi.mongodb.net/shoppingApp?retryWrites=true&w=majority')
 var app=express()
 
 // parse application/x-www-form-urlencoded
