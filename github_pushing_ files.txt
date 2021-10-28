@@ -12,7 +12,7 @@ node js
 1=> create node js project
     a) create a folder + open comand prompt 
     b) init node js ( npm init)
-    c) open visualstudio code ( enter  code . )
+    c) open visualstudio code ( enter  code . )777777777777777u
 2=> install express 
     a) npm install express --save
     b) 'npm install' command is used for installing required dependency classes     
@@ -22,4 +22,20 @@ node js
 
 4=> install body-parser
     a) npm install body-parser --save
+    b) var urlencodedParser = bodyParser.urlencoded({ extended: false })
+    c) // parse application/x-www-form-urlencoded
+        var urlencodedParser = bodyParser.urlencoded({ extended: false })
+        app.use(urlencodedParser)
+        // parse application/json
+        app.use(bodyParser.json())
+
+        app.post('/', (request,response)=>{
+          response.send('server stated : http://localhost:3000/ post ')
+        })
+
+        app.get("/",(request,response)=>{
+           response.send('server stated : http://localhost:3000/ get ')
+        })
+
+
        
