@@ -5,7 +5,7 @@ var {userdetails_model}=require('./modules/userdetails')
 
 
 
-mongoose.connect('mongodb+srv://root:root@cluster0.bi1zi.mongodb.net/shoppingApp?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://root:root@cluster0.bi1zi.mongodb.net/shoppingApp?retryWrites=true&w=majority',{ useNewUrlParser: true})
 var app=express()
 
 // parse application/x-www-form-urlencoded
@@ -32,8 +32,26 @@ app.post('/register', (request,response)=>{
 
 })
 
-app.get("/register",(request,response)=>{
-    response.send('server stated : http://localhost:3000/ get ')
+app.post('/getAllUserDetails', async (Request,response)=>{
+    
+    try{
+        var userdeails = await userdetails_model.find()
+        response.json({
+            "ResponseStatus": "Successfully fetch user details ",
+            "ResponseCode" : 100,
+            "UserDetails" : userdeails
+        })
+
+    }catch(error){
+        response.json({
+            "ResponseStatus": error,
+            "ResponseCode":  000
+        })
+    }
+})
+
+app.get("/",(request,response)=>{
+    response.send('Welcome to shopping app')
 })
 
 
