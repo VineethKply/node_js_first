@@ -14,12 +14,12 @@ app.use(urlencodedParser)
 // parse application/json
 app.use(bodyParser.json())
 
-app.post('/', (request,response)=>{
+app.post('/register', (request,response)=>{
     var usermodelobj = new userdetails_model(request.body);
     response.send(usermodelobj)
 })
 
-app.get("/",(request,response)=>{
+app.get("/register",(request,response)=>{
     response.send('server stated : http://localhost:3000/ get ')
 })
 
