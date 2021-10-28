@@ -24,7 +24,7 @@ app.post('/register', (request,response)=>{
             })
         }else{
             response.json({
-                "ResponseStatus": "Successfully Registered !",
+                "ResponseStatus": "Successfully Registered ",
                 "ResponseCode" : 100
             })
         }
